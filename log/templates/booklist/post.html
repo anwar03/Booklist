@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div >
+    <form class="post" method="POST" action="." enctype="multipart/form-data" >
+        <h2 class="posthead" >Add new post</h2>
+        <div >
+            <label for="id_Name"> Name </label>
+            <input class="form-input" type="text" name="Name" id="id_Name" placeholder="Name" required=""  >
+        </div>
+        <div >
+            <label for="id_Link"> Link </label>
+            <input class="form-input" type="text" name="Link" id="id_Link" placeholder="Link" required=""  >
+        </div>
+        <div >
+            <label for="id_Description"> Description </label>
+            <textarea class="form-input" type="text" name="Description" id="id_Description" placeholder="Description" required=""  ></textarea>
+        </div>
+        <button type="submit" class="btn">Post</button>
+        {% csrf_token %}
+
+    </form>
+</div>
+
+{% endblock %}

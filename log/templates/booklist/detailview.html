@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{%block content %}
+<div  class="container detail">
+	<h1>{{ Book.Name }}</h1>
+	<p>published date: {{ Book.pub_date }}</p>
+	Link: <a href="{{ Book.Link }}"> {{ Book.Name }}</a>
+	<p>Description: {{ Book.Description }} </p>
+
+</div>
+
+{% endblock %}
+

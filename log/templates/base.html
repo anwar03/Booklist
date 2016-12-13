@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<!DOCTYPE>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+    <nav>
+        <ul>
+            {% if user.username %}
+                <p>{{ user.username  }} </p>
+            {% endif %}
+
+            {% if user.is_authenticated %}
+                <li><a href="/logout">logout</a></li>
+                <li><a href="/post">Post</a></li>
+            {% else %}
+                <li> <a href="/register/">register</a></li>
+                <li> <a href="/login/">Login</a></li>
+            {% endif %}
+            <li><a href="/">Home</a></li>
+        </ul>
+
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>
